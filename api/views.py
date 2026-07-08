@@ -82,7 +82,7 @@ from .serializers import ProductSerializer
 def add_product(request):
     serializer = ProductSerializer(data=request.data)
 
-    if serializer.is_valid():   # 🔥 THIS ENABLES VALIDATION
+    if serializer.is_valid():   
         serializer.save()
         return Response({"message": "Product added successfully"})
 
