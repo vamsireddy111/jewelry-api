@@ -15,7 +15,7 @@ def home(request):
 def get_products(request):
     products = Product.objects.all()
 
-    # 🔍 Price Filter
+    
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
 
@@ -25,12 +25,11 @@ def get_products(request):
     if max_price:
         products = products.filter(price__lte=max_price)
 
-    # 🔍 Metal Filter
+  
     metal = request.GET.get('metal')
     if metal:
         products = products.filter(base_metal__iexact=metal)
 
-    # 🔃 Sorting
     sort = request.GET.get('sort')
 
     if sort == 'price_low':
