@@ -14,4 +14,5 @@ urlpatterns = [
     # Users
     path('users/register/', views.register_user),
     path('users/login/', views.login_user),
+    path('', views.home),
 ]
